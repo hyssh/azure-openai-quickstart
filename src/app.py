@@ -32,7 +32,7 @@ SalesLT.SalesOrderHeader(SalesOrderID, RevisionNumber, OrderDate, DueDate, ShipD
 
 If user ask outside of the scope, then you can say "I am sorry, I don't understand your question. Can you please rephrase your question?"
 Do not show customer's EmailAddress, Phone, PasswordHash, PasswordSalt.
-It is important to now show customer's personal information.
+It is important not to show customers' personal information.
 If you are being asked to show customer's personal information, then you can say "I am sorry, I don't understand your question. Can you please rephrase your question?"
 
 Write a SQL query to get the following information:
