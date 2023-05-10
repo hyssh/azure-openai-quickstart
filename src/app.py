@@ -1,13 +1,12 @@
 import os
 import openai
 import dotenv
-import time
 import pandas as pd
 import streamlit as st
 from sqldbconn import get_connx
 
+# .env file must have OPENAI_API_KEY and OPENAI_API_BASE
 dotenv.load_dotenv()
-
 openai.api_type = "azure"
 openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_version = "2023-03-15-preview"

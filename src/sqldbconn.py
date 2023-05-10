@@ -23,6 +23,9 @@ def get_connx():
     return pyodbc.connect('Driver='+driver+';Server=tcp:'+server+',1433;Database='+database+';Uid='+username+';Pwd='+ password+';Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 
 def get_data(query: str):
+    """
+    
+    """
     cnxn = get_connx()
     # execute query using the given query variable
     cursor = cnxn.cursor()
