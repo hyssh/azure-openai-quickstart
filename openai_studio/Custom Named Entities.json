@@ -1,0 +1,25 @@
+{
+    "systemPrompt": "You are an AI assistant that helps people find information.",
+    "fewShotExamples": [
+        {
+            "chatbotResponse": "Job title: Linux Engineer\n",
+            "userInput": "Sentence: John Doe has been working for Microsoft for 20 years as a Linux Engineer.\n"
+        },
+        {
+            "chatbotResponse": "Job title: none\n",
+            "userInput": "Sentence: John Doe has been working for Microsoft for 20 years and he loved it.\n"
+        },
+        {
+            "chatbotResponse": "Job title: Director\n",
+            "userInput": "Sentence: Marc Simoncini | Director | Meetic\n"
+        }
+    ],
+    "chatParameters": {
+        "deploymentName": "chatgpt",
+        "maxResponseLength": 800,
+        "temperature": 0.5,
+        "topProbablities": 0.95,
+        "stopSequences": null,
+        "pastMessagesToInclude": 10
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "systemPrompt": "You are an AI assistant that helps people find information.",
+    "fewShotExamples": [
+        {
+            "chatbotResponse": "Star Rating: 5",
+            "userInput": "Review: This is a great product. I love it.\n"
+        },
+        {
+            "chatbotResponse": "Star Rating: 1",
+            "userInput": "Review: This is a terrible product. I hate it.\n"
+        },
+        {
+            "chatbotResponse": "Star Rating: 3\n",
+            "userInput": "Review: I like the product overall design, but it's not very comfortable.\n"
+        }
+    ],
+    "chatParameters": {
+        "deploymentName": "chatgpt",
+        "maxResponseLength": 800,
+        "temperature": 0.5,
+        "topProbablities": 0.95,
+        "stopSequences": null,
+        "pastMessagesToInclude": 10
+    }
+}
