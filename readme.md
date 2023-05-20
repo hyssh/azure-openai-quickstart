@@ -1,7 +1,7 @@
 # Natual Language to SQL Query
 
 Azure OpenAI can help you to find business insights using natual language.
-![](./images/0.RunQuery.png)
+![](./images/1.sample102.png)
 
 ## Requirements
 
@@ -21,7 +21,9 @@ Windows PC/Mac
 ## Setup Environment
 
 1. Clone repo to your local PC
+
 2. Create `.env` in `src` folder
+
 ```
 OPENAI_API_BASE=
 OPENAI_API_KEY=
@@ -30,8 +32,10 @@ SQL_DATABASE=
 SQL_USERNAME=
 SQL_PASSWORD=
 ```
+
 3. Open terminal and install packages `pip install -r ./requirements.txt`
-4. Run command `streamlit run ./src/app.py`
+
+4. Run command `streamlit run ./src/sample101.py` or run command `streamlit run ./src/sample102.py`
 
 
 ## Prompt Engineering

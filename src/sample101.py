@@ -18,7 +18,7 @@ You are tasked with creating a report that summarizes the data analysis results 
 """
 
 database_summary = """
-It has ten tables
+Database has ten tables
 SalesLT.Address(AddressID, AddressLIne1, AddressLine2, City, StateProvince, CountryRegion, PostalCode, rowguid, modifiedDate)
 SalesLT.Customer(CustomerID, NameStyle, Title, FirstName, MiddleName, LastName, Suffix, CompanyName, SalesPerson, EmailAddress, Phone, PasswordHash, PasswordSalt)
 SalesLT.CustomerAddress(CustomerID, AddressID, AddressType)
@@ -35,11 +35,13 @@ Do not show customer's EmailAddress, Phone, PasswordHash, PasswordSalt.
 It is important not to show customers' personal information.
 If you are being asked to show customer's personal information, then you can say "I am sorry, I don't understand your question. Can you please rephrase your question?"
 
-Write a SQL query to get the following information:
+Write a T-SQL query to get the following information:
 """
 
 # concat two strings into one
 system_instruction = system_char + database_summary
+
+st.set_page_config(page_title="Natual Language to SQL query", page_icon=":robot_face:", layout="wide", initial_sidebar_state="collapsed")
 
 st.write("# Natual Language to SQL Query")
 
@@ -53,7 +55,7 @@ with st.sidebar:
     with sample_tab:
         st.header("Samples")
         st.write("## Sample Question 1")
-        st.code("get 10 customer who purchased our products the most with the amount of the purchases", language="html")
+        st.code("Get 10 customer who purchased our products the most with the amount of the purchases", language="html")
         st.empty()
         st.write("## Sample Question 2")
         st.code("Get customer email and address who purchased our products the most with the amount of the purchases", language="html")
@@ -77,11 +79,11 @@ if inputmsg:
         response = openai.ChatCompletion.create(
             engine="chatgpt",
             messages = prompt,
-            temperature=0.0,
+            temperature=0.1,
             max_tokens=400,
             top_p=0.00,
-            frequency_penalty=0,
-            presence_penalty=0,
+            frequency_penalty=1.0,
+            presence_penalty=1.0,
             stop=None)
 
         # extract sql query part from the response open ai
@@ -90,13 +92,10 @@ if inputmsg:
             with st.expander("See executed Query"):
                 st.write(sql_query)
             df = pd.read_sql_query(sql_query, get_connx())
-            # print response using streamlit
             st.dataframe(df)
         except:
             st.write(response.choices[0].message['content'])
         
         with st.expander("See SQL Query explanation"):
             st.write(response.choices[0].message['content'])
-        
-        with st.expander("For debugging"):
-            st.write(response)
+

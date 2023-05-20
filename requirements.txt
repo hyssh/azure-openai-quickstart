@@ -7,3 +7,5 @@ chromadb
 python-dotenv
 pyodbc
 pandas
+matplotlib
+plotly

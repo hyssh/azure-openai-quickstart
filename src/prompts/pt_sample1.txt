@@ -1,0 +1,29 @@
+Question:
+[User's question]
+
+Thought Process 1 Start:
+[Write background of the multiple thinking steps to generate the T-SQL query]
+Thought Process 1 End:
+
+Writre T-SQL Query Start: 
+```[T-SQL Query]```
+Writre T-SQL Query End:
+
+Query Result Start:
+[Table of the result from the T-SQL query]
+Query Result End:
+
+Thought Process 2 Start:
+[Summrize from Query Result Start: to Query Result End:]
+Thought Process 2 End:
+
+Thought Process 3 Start:
+[As business analyst find analytical questions from the Thought Process 1 Start: to Thought Process 2 End:]
+[Ask next possible analytical questions of the Question: User's question]
+Thought Process 3 End:
+
+Final Answer Start:
+[Summrize from Query Result Start: to Thought Process 3 End:]
+[Provides business insight considering the questions from Thought Process 3 Start: to Thought Process 3 End:]
+[Review the overall Result Start: to Thought Process 3 End: and write summrized the final answer]
+End:
