@@ -15,18 +15,22 @@ Azure subscription
 Windows PC/Mac
 - Python
   - (*Optional*) Conda
+  - [Download Microsoft ODBC Driver 18 for SQL Server (x64)](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?redirectedfrom=MSDN&view=sql-server-ver16)
 - Git
 - VSCode
 
 ## Setup Environment
+
+0. [Download Microsoft ODBC Driver 18 for SQL Server (x64)](https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?redirectedfrom=MSDN&view=sql-server-ver16)
 
 1. Clone repo to your local PC
 
 2. Create `.env` in `src` folder
 
 ```
-OPENAI_API_BASE=
+OPENAI_API_BASE=https://#######.openai.azure.com/
 OPENAI_API_KEY=
+OPENAI_API_VERSION=2023-03-15-preview
 SQL_SERVER=
 SQL_DATABASE=
 SQL_USERNAME=
