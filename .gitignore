@@ -6,4 +6,5 @@
 /quickstart-learnfast/word-docx-chunk/__pycache__
 /quickstart-learnfast/customer-sentiment-review/.env
 .env
+**/.env
 __pycache__
