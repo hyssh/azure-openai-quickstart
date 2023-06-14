@@ -1,2 +1,9 @@
 /src/__pycache__
 /src/.env
+/quickstart-learnfast/creative-product-naming-assistant/.env
+/quickstart-learnfast/word-docx-chunk/chunks-txt
+/quickstart-learnfast/word-docx-chunk/.env
+/quickstart-learnfast/word-docx-chunk/__pycache__
+/quickstart-learnfast/customer-sentiment-review/.env
+.env
+__pycache__

@@ -45,7 +45,7 @@ examples_assistant_res = """
 }]
 """
 
-ENGINE = "chatgpt"
+ENGINE = "chat-gpt"
 TEMPERATURE = 0.1
 MAX_TOKENS = 200
 TOP_P = 1

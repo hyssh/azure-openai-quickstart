@@ -77,11 +77,12 @@ if inputmsg:
         prompt = [system_msgs, user_msg]
 
         response = openai.ChatCompletion.create(
-            engine="chatgpt",
+            engine="chat-gpt",
             messages = prompt,
             temperature=0.1,
             max_tokens=400,
             top_p=0.00,
+            n=3,
             frequency_penalty=1.0,
             presence_penalty=1.0,
             stop=None)

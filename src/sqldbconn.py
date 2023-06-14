@@ -20,7 +20,8 @@ def get_connx():
     database = os.getenv("SQL_DATABASE")
     username = os.getenv("SQL_USERNAME")
     password = os.getenv("SQL_PASSWORD")
-    driver= '{ODBC Driver'+ pyodbc.version +' for SQL Server}'
+    # driver= '{ODBC Driver'+ pyodbc.version +' for SQL Server}'
+    driver = '{ODBC Driver 18 for SQL Server}'
     return pyodbc.connect('Driver='+driver+';Server=tcp:'+server+',1433;Database='+database+';Uid='+username+';Pwd='+ password+';Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 
 def get_connection_string():

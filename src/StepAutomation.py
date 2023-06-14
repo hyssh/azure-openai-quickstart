@@ -78,7 +78,7 @@ class StepAutomation:
 
     def run(self, user_msg: dict,
             assistant_msg: dict={},
-            engine="chatgpt",
+            engine="chat-gpt",
             temperature=0.0,
             max_tokens=100,
             top_p=0.00,
