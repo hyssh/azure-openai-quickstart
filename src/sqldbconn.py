@@ -40,7 +40,7 @@ def get_connection_string():
     username = os.getenv("SQL_USERNAME")
     password = os.getenv("SQL_PASSWORD")
     driver= '{ODBC Driver 18 for SQL Server}'
-    odbc_conn = 'Driver=' + driver + ';Server=tcp:' + server + f',1433;Database={database};Uid={username};Pwd={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+    odbc_conn = 'Driver=' + driver + ';Server=tcp:' + server + f',1433;Database={database};Uid={username};Pwd={password};Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30'
     params = urllib.parse.quote_plus(odbc_conn)
 
     return 'mssql+pyodbc://?odbc_connect={}'.format(params)

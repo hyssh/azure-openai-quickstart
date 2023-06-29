@@ -1,0 +1,8 @@
+streamlit==1.24.0
+langchain==0.0.218
+openai==0.27.8
+python-dotenv==1.0.0
+pyodbc==4.0.39
+pandas==2.0.2
+matplotlib==3.7.1
+plotly==5.15.0

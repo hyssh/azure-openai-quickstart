@@ -9,7 +9,9 @@ import dotenv
 dotenv.load_dotenv()
 
 class StepAutomation:
-    # initialize the class    
+    """
+    This class is to automate the steps of the data analysis process.
+    """
     def __init__(self, 
                 system_char = """
                     You are a data analyst working for a company that provides data analysis services to clients.
@@ -75,6 +77,11 @@ class StepAutomation:
         openai.api_base = os.getenv("OPENAI_API_BASE")
         openai.api_version = "2023-03-15-preview"
         openai.api_key = os.getenv("OPENAI_API_KEY")
+        self.ENGINE = os.getenv("ENGINE")
+        self.DEPLOYMENT_NAME = os.getenv("DEPLOYMENT_NAME")
+        self.MODEL_NAME = os.getenv("MODEL_NAME")
+        
+        
 
     def run(self, user_msg: dict,
             assistant_msg: dict={},
@@ -96,7 +103,7 @@ class StepAutomation:
         self.update_history(user_msg)        
         
         res = openai.ChatCompletion.create(
-            engine=engine,
+            engine=self.ENGINE,
             messages = self.chat_history,
             temperature=temperature,
             max_tokens=max_tokens,
