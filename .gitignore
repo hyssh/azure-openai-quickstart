@@ -2,3 +2,5 @@
 .env
 **/.env
 **/__pycache__
+.vscode
+.vscode/settings.json

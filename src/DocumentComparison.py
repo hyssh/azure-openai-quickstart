@@ -19,17 +19,9 @@ TOP_P = 1
 FREQUENCY_PENALTY = 0.0
 PRESENCE_PENALTY = 0.0
 
-if "DocComparison" not in st.session_state:
-    st.session_state["DocComparison"] = True
-
-
 def load_contracts():
     #read two text files
     return open("./contract/version1.txt", "r").read(), open("./contract/version2.txt", "r").read()
-
-
-def DocumentComairson():
-    pass
 
 # define custom function to run the openai.ChatCompletion.create function
 def run(user_msg: str, system_msg: str):  
@@ -78,21 +70,18 @@ def DocumentComparison():
     # load documents
     ver1, ver2 = load_contracts()
 
-    if st.session_state.DocComparison:
-        st.markdown("---")
-        with st.container():
-            col1, col2 = st.columns(2)
+    st.markdown("---")
+    with st.container():
+        col1, col2 = st.columns(2)
 
-            with col1:
-                with st.container():
-                    st.write("### version 1")
-                    v1_text_area = st.text_area(label="contents", value=ver1, height=500)
-            with col2:
-                with st.container():
-                    st.write("### version 2")
-                    v2_text_area = st.text_area(label="contents", value = ver2, height=500)
-    else:
-        pass
+        with col1:
+            with st.container():
+                st.write("### version 1")
+                v1_text_area = st.text_area(label="contents", value=ver1, height=500)
+        with col2:
+            with st.container():
+                st.write("### version 2")
+                v2_text_area = st.text_area(label="contents", value = ver2, height=500)
 
     st.markdown("---")
 
