@@ -1,0 +1,36 @@
+EMPLOYMENT CONTRACT
+
+This Employment Contract (the "Contract") is entered into between RoketScience, with its principal place of business at 9876 54th st. Bellevue WA 98004 (the "Employer"), and Hyunsuk Shin, residing at 1234 5th AVE, Sammamish, WA 90875 (the "Employee"), collectively referred to as the "Parties."
+POSITION AND RESPONSIBILITIES:
+a) The Employer hereby employs the Employee in the position of Developer, and the Employee agrees to accept such employment.
+b) The Employee shall perform the duties and responsibilities associated with the position of Developer, including but not limited to:
+Developing and maintaining software applications
+Participating in the design and implementation of software systems
+Debugging and resolving software defects
+Collaborating with team members to achieve project goals
+Keeping up-to-date with industry trends and technologies relevant to the role
+EMPLOYMENT TERM:
+a) This Contract shall commence on 07/01/2023 and shall continue until terminated by either Party in accordance with the provisions of this Contract.
+b) The Employee's employment is subject to a probationary period of 60 days, during which either Party may terminate the employment with a notice period of 90 days.
+COMPENSATION:
+a) The Employee shall be paid a base salary of $ 123,456 USD per a year, subject to applicable taxes and deductions.
+b) The Employer shall provide any additional benefits as outlined in the company's policies and procedures, including but not limited to healthcare, retirement plans, and paid time off.
+CONFIDENTIALITY:
+a) The Employee acknowledges and agrees that they may have access to confidential information, including but not limited to trade secrets, client data, and proprietary software.
+b) The Employee shall maintain strict confidentiality of all such information and shall not disclose it to any third party without prior written consent from the Employer, both during and after the term of employment.
+INTELLECTUAL PROPERTY:
+a) Any intellectual property created by the Employee during the course of employment, including software code, designs, and inventions, shall be the sole property of the Employer.
+b) The Employee hereby assigns all rights, title, and interest in such intellectual property to the Employer.
+TERMINATION:
+a) Either Party may terminate this Contract with a notice period of 14 days or payment in lieu of notice, except in cases of gross misconduct or violation of the terms of this Contract.
+b) Upon termination, the Employee shall return all company property, confidential information, and any materials related to the Employer's business.
+GOVERNING LAW:
+This Contract shall be governed by and construed in accordance with the laws of Sate of Washington. Any disputes arising out of or in connection with this Contract shall be resolved through arbitration in accordance with the rules of American Arbitration Association (AAA).
+
+IN WITNESS WHEREOF, the Parties hereto have executed this Employment Contract as of the Effective Date first above written.
+
+RoketScience
+Iam Staffson, Sr. Staff Developer
+
+Hyunsuk Shin
+06/01/2023
