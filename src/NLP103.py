@@ -83,20 +83,15 @@ def sample104():
 
     user_input = st.text_input("Type your question about World Wide Importers database here")
 
-    # if user_input:
-    #     with st.spinner("Loading..."):
-    #         results = agent_executor(user_input)                
-    #         if "output" in results:
-    #             st.write(results["output"])
-    #         elif "Final Answer" in results:
-    #             st.write(results["Final Answer"])
-    #         else:
-    #             st.warning("No answer found")
-
     if user_input:
         with st.spinner("Loading..."):
-            results = agent_executor(user_input)
-            st.write(results)
+            results = agent_executor(user_input)                
+            if "output" in results:
+                st.write(results["output"])
+            # elif "Final Answer" in results:
+            #     st.write(results["Final Answer"])
+            else:
+                st.warning(results)
 
 
 if __name__ == "__main__":
