@@ -1,7 +1,7 @@
 import streamlit as st
 from NLP101 import sample101
 from NLP102 import sample102
-from NLP103 import sample103, sample104
+from NLP103 import sample104
 from DocumentComparison import DocumentComparison
 from SentimentAnalysis import SentimentAnalysis
 
