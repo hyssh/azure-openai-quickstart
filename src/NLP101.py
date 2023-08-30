@@ -18,10 +18,11 @@ MODEL_NAME = os.getenv("MODEL_NAME")
 def sample101():
     system_char = """
     You are a data analyst working for a company that provides data analysis services to clients. 
-    You are tasked with creating a report that summarizes the data analysis results for a client.
+    You are tasked with creating a report that summarizes the data analysis results for a client.    
     """
 
     database_summary = """
+    ## Database Summary
     Database has ten tables
     SalesLT.Address(AddressID, AddressLIne1, AddressLine2, City, StateProvince, CountryRegion, PostalCode, rowguid, modifiedDate)
     SalesLT.Customer(CustomerID, NameStyle, Title, FirstName, MiddleName, LastName, Suffix, CompanyName, SalesPerson, EmailAddress, Phone, PasswordHash, PasswordSalt)
@@ -32,8 +33,10 @@ def sample101():
     SalesLT.ProductModel(ProductModelID, Name, CatalogDesciortion)
     SalesLT.ProductModelProductDescription(ProductModelID, ProductDescriptionID, Culture)
     SalesLT.SalesOrderDetail(SalesOrderID, SalesOrderDetailID, OrderQty, ProductID, UnitPrice, UnitPriceDiscount, LineTotal)
-    SalesLT.SalesOrderHeader(SalesOrderID, RevisionNumber, OrderDate, DueDate, ShipDate, Status, OnlineOrderFlag, SalesOrderNumber, AccountNumber, CustomerID, ShipToAddressID, BillToAddressID, ShipMethod, CreditCardApprovalCode, SubTotal, TaxAmt, Freight, TotalDue, Comment)
+    SalesLT.SalesOrderHeader(SalesOrderID, RevisionNumber, OrderDate, DueDate, ShipDate, Status, OnlineOrderFlag, SalesOrderNumber, AccountNumber, CustomerID, ShipToAddressID, BillToAddressID, ShipMethod, CreditCardApprovalCode, SubTotal, TaxAmt, Freight, TotalDue, Comment)    
 
+    ## Safty Instruction
+    Do not run any DML or DDL queries. Help user to get the information they need.
     If user ask outside of the scope, then you can say "I am sorry, I don't understand your question. Can you please rephrase your question?"
     Do not show customer's EmailAddress, Phone, PasswordHash, PasswordSalt.
     It is important not to show customers' personal information.
@@ -47,11 +50,21 @@ def sample101():
 
     # st.set_page_config(page_title="Natual Language to SQL query", page_icon=":robot_face:", layout="wide", initial_sidebar_state="collapsed")
 
-    st.write("# Natual Language to SQL Query #101")
+    st.markdown("# Natural Language to SQL Query")
+    st.markdown("This demo will show you how to use Azure OpenAI to convert natural language to SQL query")
+    with st.expander("Demo scenario"):
+        st.image("../images/Architecture-demo.png")
+        st.markdown("1. User will type a question in the input box")
+        st.markdown("2. __Web App__ sends the question to __Azure OpenAI__")
+        st.markdown("3. __Azure OpenAI__ will convert the question to SQL query")
+        st.markdown("4. __Web App__ sends the SQL query to __Azure SQL DB__")
+        st.markdown("5. __Azure SQL DB__ will execute the SQL query and return the result to __Web App__")
+        st.markdown("6. __Web App__ will show the result to user")
 
+    st.markdown("---")
     with st.container():
         # create a input using streamlit
-        inputmsg = st.text_input("Type your question about World Wide Importers database here")
+        inputmsg = st.text_input("Type your question")
 
     with st.sidebar:
         with st.container():
@@ -59,12 +72,12 @@ def sample101():
         sample_tab, prompt_tab, system_tab = st.tabs(["samples", "prompts", "system"])
         # samples
         with sample_tab:
-            st.header("Samples")
-            st.write("## Sample Question 1")
+            st.write("Sample Questions ")
             st.code("Get 10 customer who purchased our products the most with the amount of the purchases", language="html")
-            st.empty()
-            st.write("## Sample Question 2")
             st.code("Get customer email and address who purchased our products the most with the amount of the purchases", language="html")
+            st.code("Create a new table for customer support", language="html")
+            st.code("Add 100 to all unit price of our products", language="html")
+            st.code("Drop Customer table", language="html")
 
         # prompts
         with prompt_tab:

@@ -29,11 +29,15 @@ def sample102():
             st.info(assistant_question_res)
 
         # Step 2. send the thought process 1 and get the query
-        query = stepautomation.run(user_msg={"role":"user","content":"Writre T-SQL Query Start:\n"},
-                                temperature=0.7,
-                                max_tokens=400).split("```")[1]
-        with st.expander("See T-SQL Query"):
-            st.info(query)
+        try:
+            query = stepautomation.run(user_msg={"role":"user","content":"Writre T-SQL Query Start:\n"},
+                                        temperature=0.7,
+                                        max_tokens=400).split("```")[1]
+            with st.expander("See T-SQL Query"):
+                st.info(query)
+        except IndexError:
+            st.error("Failed to extract T-SQL query from OpenAI response.")
+            return "I am sorry, I don't understand your command. Can you please rephrase your command?"
 
         # Step 3. send the query and get the result    
         df = pd.read_sql_query(query, get_connx())
@@ -62,9 +66,18 @@ def sample102():
                                             max_tokens=1000)
         return final_answer_res
 
-
-    st.write("# Natual Language to SQL Query #102")
-
+    st.markdown("# Generate Additional Insights using OpenAI")
+    st.markdown("OpenAI review data and provides additional insights to the user")
+    with st.expander("Demo scenario"):
+        st.image("../images/Architecture-demo.png")
+        st.markdown("1. User will type a question in the input box")
+        st.markdown("2. __Web App__ sends the question to __Azure OpenAI__")
+        st.markdown("3. __Azure OpenAI__ will convert the question to SQL query")
+        st.markdown("4. __Web App__ sends the SQL query to __Azure SQL DB__")
+        st.markdown("5. __Azure SQL DB__ will execute the SQL query and return the result to __Web App__")
+        st.markdown("6. __Web App__ will show the result to user")
+    
+    st.markdown("---")
     with st.container():
         # create a input using streamlit
         inputmsg = st.text_input("Type your question about World Wide Importers database here")
@@ -77,12 +90,12 @@ def sample102():
         # samples
         with sample_tab:
             st.header("Samples")
-            st.write("## Sample Questions")
             st.code("high-value customers for targeted marketing campaigns or loyalty programs", language="html")
             st.code("average number of orders and purchase amount per customer ", language="html")
             st.code("Get top 5 most popular products with the amount of the purchases", language="html")
             st.code("Get customer email and address who purchased our products the most with the amount of the purchases", language="html")
             st.code("Create a list combining product category and product naming it 'ProductShortDesc' name and add sales revenue", language="html")
+            st.code("Drop Customer table", language="html")
 
         # prompts
         with prompt_tab:
