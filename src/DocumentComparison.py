@@ -70,6 +70,15 @@ def DocumentComparison():
     # load documents
     ver1, ver2 = load_contracts()
 
+    st.markdown("# Compare two documents")
+    st.markdown("This demo will show you how to use Azure OpenAI to compare two documents")
+    with st.expander("Demo scenario"):
+        st.image("../images/Architecture-demo-docs.png")
+        st.markdown("1. User will type text (multi lines) in the input box")
+        st.markdown("2. __Web App__ sends the text to __Azure OpenAI__")
+        st.markdown("3. __Azure OpenAI__ classify the text line by line and return the classification results in JSON format")
+        st.markdown("4. __Web App__ shows the results on screen and user can download the results as CVS file")
+    
     st.markdown("---")
     with st.container():
         col1, col2 = st.columns(2)

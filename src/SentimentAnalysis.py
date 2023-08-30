@@ -53,8 +53,16 @@ def SentimentAnalysis():
         "category": "question"  
     }]
     """
-    st.write("# Customer Sentiment Review")
-
+    st.markdown("# Customer Sentiment Review")
+    st.markdown("This demo will show you how to use Azure OpenAI to classify customer's feedback into 5 categories: positive, negative, neutral, question, and answer.")
+    with st.expander("Demo scenario"):
+        st.image("../images/Architecture-demo-sentiments.png")
+        st.markdown("1. User will type text (multi lines) in the input box")
+        st.markdown("2. __Web App__ sends the text to __Azure OpenAI__")
+        st.markdown("3. __Azure OpenAI__ classify the text line by line and return the classification results in JSON format")
+        st.markdown("4. __Web App__ shows the results on screen and user can download the results as CVS file")
+    st.markdown("---")
+    
     # sidebar for system messages and examples
     with st.sidebar:
         with st.container():
