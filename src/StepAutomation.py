@@ -119,7 +119,9 @@ class StepAutomation:
             stop=stop_chars)
         
         self.update_history({"role":"assistant", "content":res.choices[0].message['content']})
-        
+        print()
+        print(self.chat_history)
+        print()
         return res.choices[0].message['content']
         
     # retrun default system instruction

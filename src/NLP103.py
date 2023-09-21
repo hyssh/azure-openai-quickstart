@@ -117,7 +117,7 @@ def sample104():
     st.markdown("# LangChain SQL Agent")
     st.markdown("LangChain helps orchestration of multiple steps to solve complex problems")
     with st.expander("Demo scenario"):
-        st.image("../images/Architecture-demo.png")
+        st.image("https://github.com/hyssh/azure-openai-quickstart/blob/main/images/Architecture-demo.png?raw=true")
         st.markdown("1. __Web App__ use __sql_agent__ and follow Thought > Action > Observation steps to get the final answer")
         st.markdown("2. __sql_agent__ sends one or more request to __Azure OpenAI__")
         st.markdown("3. __Azure OpenAI__ generate Thoughts and/or Observations")

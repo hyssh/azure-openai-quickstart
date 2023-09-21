@@ -69,7 +69,7 @@ def sample102():
     st.markdown("# Generate Additional Insights using OpenAI")
     st.markdown("OpenAI review data and provides additional insights to the user")
     with st.expander("Demo scenario"):
-        st.image("../images/Architecture-demo.png")
+        st.image("https://github.com/hyssh/azure-openai-quickstart/blob/main/images/Architecture-demo.png?raw=true")
         st.markdown("1. User will type a question in the input box")
         st.markdown("2. __Web App__ sends the question to __Azure OpenAI__")
         st.markdown("3. __Azure OpenAI__ will convert the question to SQL query")

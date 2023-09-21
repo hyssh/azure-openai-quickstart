@@ -53,7 +53,7 @@ def sample101():
     st.markdown("# Natural Language to SQL Query")
     st.markdown("This demo will show you how to use Azure OpenAI to convert natural language to SQL query")
     with st.expander("Demo scenario"):
-        st.image("../images/Architecture-demo.png")
+        st.image("https://github.com/hyssh/azure-openai-quickstart/blob/main/images/Architecture-demo.png?raw=true")
         st.markdown("1. User will type a question in the input box")
         st.markdown("2. __Web App__ sends the question to __Azure OpenAI__")
         st.markdown("3. __Azure OpenAI__ will convert the question to SQL query")
@@ -85,7 +85,7 @@ def sample101():
             st.code(database_summary, language="html")
 
         with system_tab:
-            st.header("System")
+            st.header("System messages")
             st.code(system_char, language="html")
 
     # if input is not empty, then run the code below
