@@ -35,6 +35,7 @@ def SentimentAnalysis():
     "I don't have any strong feelings one way or the other about my recent purchase. It was just okay."
     "Can you tell me more about the warranty on this product?"
     """
+
     examples_assistant_res = """
     [{  
         "text": "I had an amazing experience at your restaurant! The food was delicious and the service was exceptional. Thank you so much!",  
@@ -53,10 +54,11 @@ def SentimentAnalysis():
         "category": "question"  
     }]
     """
+    
     st.markdown("# Customer Sentiment Review")
     st.markdown("This demo will show you how to use Azure OpenAI to classify customer's feedback into 5 categories: positive, negative, neutral, question, and answer.")
     with st.expander("Demo scenario"):
-        st.image("../images/Architecture-demo-sentiments.png")
+        st.image("https://github.com/hyssh/azure-openai-quickstart/blob/main/images/Architecture-demo-sentiments.png?raw=true")
         st.markdown("1. User will type text (multi lines) in the input box")
         st.markdown("2. __Web App__ sends the text to __Azure OpenAI__")
         st.markdown("3. __Azure OpenAI__ classify the text line by line and return the classification results in JSON format")
@@ -67,19 +69,34 @@ def SentimentAnalysis():
     with st.sidebar:
         with st.container():
             st.info("Classify customer's feedback into 5 categories: positive, negative, neutral, question, and answer. Return classification results with given customer's feedback in JSON format.")
-        st.header("System messages")
-        system_msg = st.text_area(label="Edit system message", value=system_msg, height=256)
+        sample_tab, system_tab = st.tabs(["samples", "system"])
+        # samples
+        with sample_tab:
+            st.header("Examples")
+            st.code("\"I like Azure.\"", language="html")
+            st.code("\"I like Data Science.\"", language="html")
+
+        with system_tab:
+            st.header("System messages")
+            st.code(system_msg, language="html")
 
     text_input_tab, csv_upload_tab = st.tabs(["Type customer feedback in text", "Upload CSV file with customer feedback"])
 
     with text_input_tab:
         with st.container():
             st.header("Type customer feedback in text")
-            st.info("You can provide multiple feedbacks by adding new line")
+            st.write("Use `double quote` for the each feedback and new line for additional feedback.")
+            st.markdown("""
+                        Example:
+                        ```text
+                        "I like Azure."
+                        "I like Data Science."
+                        ```
+                        """)
             user_msg = st.text_area(label="Enter customer feedback here, add new line for each feedback")
             if st.button("Run sentiment review"):
                 st.spinner("Running sentiment review...")
-                results = pd.DataFrame(json.loads(run(user_msg)), columns=["text", "category"])
+                results = pd.DataFrame(json.loads(run(user_msg, system_msg, examples_user_prompt, examples_assistant_res)), columns=["text", "category"])
                 st.dataframe(results)
 
                 # download results as csv file

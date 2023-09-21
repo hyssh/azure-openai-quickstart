@@ -1,6 +1,7 @@
 streamlit
 streamlit-chat
 langchain
+azure-ai-formrecognizer
 openai
 wikipedia
 chromadb
@@ -10,3 +11,5 @@ pyodbc
 pandas
 matplotlib
 plotly
+scikit-learn
+scipy
