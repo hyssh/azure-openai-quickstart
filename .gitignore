@@ -5,7 +5,6 @@
 .vscode
 .vscode/settings.json
 **/chunks-txt
-**/.pdf
-**/.docx
+**/data
 .pdf
 .docx
