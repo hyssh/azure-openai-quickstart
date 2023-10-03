@@ -1,31 +1,12 @@
 import os
 import json
 import openai
-import time
 import requests
-import random
 import base64
-from collections import OrderedDict
-import urllib.request
 from tqdm import tqdm
-import langchain
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import Chroma, FAISS
-from langchain import OpenAI, VectorDBQA
-from langchain.chat_models import AzureChatOpenAI
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import RetrievalQAWithSourcesChain
-from langchain.docstore.document import Document
-from langchain.chains.question_answering import load_qa_chain
-from langchain.chains.qa_with_sources import load_qa_with_sources_chain
-from IPython.display import Markdown, HTML, display
 from dotenv import load_dotenv
 from document_chunking import DocumentChunker
 from azure.storage.blob import BlobServiceClient
-from openai.embeddings_utils import get_embedding, cosine_similarity
-
-
 
 BLOB_CONTAINER_NAME = "document-chunks"
 
@@ -64,7 +45,8 @@ def create_index_azure_search(index_name: str="demo_index_0", isVector: bool=Fal
                 {"name": "contentVector","type": "Collection(Edm.Single)","searchable": "true","retrievable": "true","dimensions": 1536,"vectorSearchConfiguration": "vectorConfig"},
                 {"name": "name", "type": "Edm.String", "searchable": "true", "retrievable": "true", "sortable": "false", "filterable": "false", "facetable": "false"},
                 {"name": "location", "type": "Edm.String", "searchable": "false", "retrievable": "true", "sortable": "false", "filterable": "false", "facetable": "false"},     
-                {"name": "page_num","type": "Edm.Int32","searchable": "false","retrievable": "true"},           
+                {"name": "page_num","type": "Edm.Int32","searchable": "false","retrievable": "true"},
+                # {"name": "keyphrases","type": "Collection(Edm.String)","searchable": "true","filterable": "false","retrievable": "true","sortable": "false","facetable": "false","key": "false","analyzer": "standard.lucene","synonymMaps": []}           
             ],
             "vectorSearch": {
                 "algorithmConfigurations": [
@@ -103,7 +85,7 @@ def create_index_azure_search(index_name: str="demo_index_0", isVector: bool=Fal
                 {"name": "name", "type": "Edm.String", "searchable": "true", "retrievable": "true", "sortable": "false", "filterable": "false", "facetable": "false"},
                 {"name": "location", "type": "Edm.String", "searchable": "false", "retrievable": "true", "sortable": "false", "filterable": "false", "facetable": "false"},
                 {"name": "page_num","type": "Edm.Int32","searchable": "false","retrievable": "true"},
-                
+                # {"name": "keyphrases","type": "Collection(Edm.String)","searchable": "true","filterable": "false","retrievable": "true","sortable": "false","facetable": "false","key": "false","analyzer": "standard.lucene","synonymMaps": []}           
             ],
             "semantic": {
                 "configurations": [

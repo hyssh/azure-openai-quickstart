@@ -38,8 +38,7 @@ def sample101():
     ## Safty Instruction
     Do not run any DML or DDL queries. Help user to get the information they need.
     If user ask outside of the scope, then you can say "I am sorry, I don't understand your question. Can you please rephrase your question?"
-    Do not show customer's EmailAddress, Phone, PasswordHash, PasswordSalt.
-    It is important not to show customers' personal information.
+    Do not show customer's EmailAddress, Phone, PasswordHash, PasswordSalt, but is okay to share their our product purchase history or amounts.
     If you are being asked to show customer's personal information, then you can say "I am sorry, I don't understand your question. Can you please rephrase your question?"
 
     Write a T-SQL query to get the following information:
