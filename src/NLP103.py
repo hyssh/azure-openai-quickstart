@@ -1,41 +1,28 @@
-#
 # https://discuss.streamlit.io/t/cannot-print-the-terminal-output-in-streamlit/6602/38
 # https://python.langchain.com/docs/modules/chains/popular/sqlite
 #
 import os
+import re
 import openai
-import dotenv
 import asyncio
-import pandas as pd
 import streamlit as st
 from sqldbconn import get_connection_string
-from typing import Dict, Union, Any, List
+from typing import Dict, Union, Any
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.callbacks.manager import CallbackManager
-from langchain.agents import ConversationalChatAgent, AgentExecutor, Tool
-from langchain.schema import AgentAction, AgentFinish, LLMResult
-from concurrent.futures import ThreadPoolExecutor
-from langchain.agents import AgentExecutor, initialize_agent, AgentType
+from langchain.schema import AgentAction, AgentFinish
+from langchain.agents import AgentType
 from langchain.schema import OutputParserException
-from langchain import PromptTemplate
-
-
-import asyncio
-from concurrent.futures import ThreadPoolExecutor
-
 from langchain.agents import create_sql_agent
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
 from langchain.agents.agent_types import AgentType
 from langchain.llms import AzureOpenAI
 from langchain.sql_database import SQLDatabase
-
 from dotenv import load_dotenv
-import openai
-import os
-from typing import Any, Dict, Union
+from langchain.agents.conversational.output_parser import ConvoOutputParser
 
 # .env file must have OPENAI_API_KEY and OPENAI_API_BASE
-dotenv.load_dotenv()
+load_dotenv()
 openai.api_type = "azure"
 openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_version = "2023-03-15-preview"
@@ -52,13 +39,33 @@ class StdOutCallbackHandler(BaseCallbackHandler):
         pass
 
     def on_agent_action(self, action: AgentAction, **kwargs: Any) -> Any:
-        #  asyncio.run(st.info(f"\u2611 {action} ..."))
+        # asyncio.run(st.info(f"\u2611 {action} ..."))
         if "Action Input" in action.log:
-            action = action.log.split("Action Input:")[1]
-            asyncio.run(st.info(f"\u2611 Searching: {action} ..."))
+            action = action.log.split("Action:")[1]
+            asyncio.run(st.info(f"Agent action: {action} ..."))
+        else:
+            pass
 
 
-def sample104():
+# ## Ref: https://github.com/langchain-ai/langchain/discussions/7403
+# class CustomConvoOutputParser(ConvoOutputParser):
+#     def parse(self, text: str) -> Union[AgentAction, AgentFinish]:
+#         if f"{self.ai_prefix}:" in text:
+#             return AgentFinish({"output": text.split(f"{self.ai_prefix}:")[-1].strip()}, text)
+#         regex = r"Action: (.*?)[\n]*Action Input: (.*)"
+#         match = re.search(regex, text)
+#         if not match:
+#             if f"{self.ai_prefix}:" in text:
+#                 return AgentFinish(
+#                     {"output": text.split(f"{self.ai_prefix}:")[-1].strip()}, text
+#                 )
+#             else:
+#                 raise OutputParserException(f"Could not parse LLM output: `{text}`")
+#         action = match.group(1)
+#         action_input = match.group(2)
+#         return AgentAction(action.strip(), action_input.strip(" ").strip('"'), text)
+
+def sample103():
     db = SQLDatabase.from_uri(get_connection_string())
     llm = AzureOpenAI(deployment_name=DEPLOYMENT_NAME, model_name=MODEL_NAME, temperature=0.0, max_tokens=1024, top_p=0.0)
     toolkit = SQLDatabaseToolkit(db=db, llm=llm)
@@ -96,7 +103,8 @@ def sample104():
         verbose=True,
         agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
         return_intermediate_steps=True,
-        callback_manager=CallbackManager(handlers=[StdOutCallbackHandler()]), 
+        callback_manager=CallbackManager(handlers=[StdOutCallbackHandler()]),
+        # output_parser=CustomConvoOutputParser(),
         # max_iterations=10,
         prefix=prefix_string,
         # max_execution_time=30
@@ -131,29 +139,11 @@ def sample104():
     if user_input:
         with st.spinner("Loading..."):
             try: 
-                results = agent_executor(user_input)
-                if "output" in results:
-                    st.write(results["output"])
-                # elif "Final Answer" in results:
-                #     st.write(results["Final Answer"])
-                else:
-                    st.warning("I am sorry, I don't understand your question. Can you please rephrase your question?")
-
-                st.markdown("---")
-                with st.expander("raw output"):
-                    st.write(results)
-
+                st.write(agent_executor.run(user_input))
             except OutputParserException as e:
-                with st.expander("Error"):
-                    st.error(f"Error parsing LLM output: {e}")
-                    st.error("Please try again")
-
-            # except UnboundLocalError as e:
-            #     with st.expander("Error"):
-            #         st.error(f"Error parsing LLM output: {e}")
-            #         st.error("Please try again")
-
-
+                error_msg = f"{e}"
+                error_msg_final_Answer = error_msg.split("Final Answer:")[1].strip().split("Question:")[0].strip()
+                st.write(f"{error_msg_final_Answer}")
 
 if __name__ == "__main__":
-        sample104()
+        sample103()
