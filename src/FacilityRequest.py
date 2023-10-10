@@ -17,7 +17,7 @@ def FacilityRequest(aoai: aoai=aoai()):
             st.code("I have a customer who has photophobia and blinds in the meeting room isn't working.", language="html")
         with system_tab:
             st.write("## System Message")
-            st.text_area(label="System", value=system_msg)
+            st.text_area(label="System", value=system_msg, height=650)
 
     st.markdown("# Facility Request")
     st.markdown("This demo will show you how to use Azure OpenAI to classify facility request and provide insight")
@@ -37,7 +37,7 @@ def FacilityRequest(aoai: aoai=aoai()):
         with col2:
             room_name = st.text_input(label="Room Name", value="Meeting Room 1")
         details_text = st.text_area(label="Details", 
-                                    height=4,
+                                    height=3,
                                     max_chars=500,
                                     value="There is a light that keeps blinking for the last 5 minutes. Please replace the bulb since we're going to have a meeting with a customer tomorrow.")
     #replace the placeholder with user input
@@ -69,14 +69,14 @@ Read the request and classify severity.
 There are four severity levels: Emergency, High, Medium, Low.
 * Emergency: Great danger or urgent situation could cause threat to operation. It needs to be fixed now.
 * High: The facility is not usable. It needs to be fixed soon.
-* Medium: The facility is usable but it needs to be fixed.
-* Low: The facility is usable but it needs to be fixed next scheduled maintenance.
+* Medium: The facility is usable, but it needs to be fixed.
+* Low: The facility is usable, but it needs to be fixed next scheduled maintenance.
 
 Provide response to the requester based on the severity level.
-* Emergency: The facility will be fixed today business hour.
-* High: The facility will be fixed in 1 business day.
-* Medium: The facility will be fixed in 2 business days.
-* Low: The facility will be fixed in 3 business days.
+* Emergency: The facility will be fixed at today's business hour.
+* High: The facility will be fixed in one business day.
+* Medium: The facility will be fixed in two business days.
+* Low: The facility will be fixed in three business days.
 
 ## Response
 Response is JSON format.
