@@ -11,7 +11,7 @@ Collaborating with team members to achieve project goals
 Keeping up-to-date with industry trends and technologies relevant to the role
 EMPLOYMENT TERM:
 a) This Contract shall commence on 07/01/2023 and shall continue until terminated by either Party in accordance with the provisions of this Contract.
-b) The Employee's employment is subject to a probationary period of 60 days, during which either Party may terminate the employment with a notice period of 10 days.
+b) The Employee's employment is subject to a probationary period of 60 days, during which either Party may terminate the employment with a notice period of 45 days.
 COMPENSATION:
 a) The Employee shall be paid a base salary of $ 123,456 USD per a year, subject to applicable taxes and deductions.
 b) The Employer shall provide any additional benefits as outlined in the company's policies and procedures, including but not limited to healthcare, retirement plans, and paid time off.
@@ -22,7 +22,7 @@ INTELLECTUAL PROPERTY:
 a) Any intellectual property created by the Employee during the course of employment, including software code, designs, and inventions, shall be the sole property of the Employer.
 b) The Employee hereby assigns all rights, title, and interest in such intellectual property to the Employer.
 TERMINATION:
-a) Either Party may terminate this Contract with a notice period of 14 days or payment in lieu of notice, except in cases of gross misconduct or violation of the terms of this Contract.
+a) Either Party may terminate this Contract with a notice period of 7 days or payment in lieu of notice, except in cases of gross misconduct or violation of the terms of this Contract.
 b) Upon termination, the Employee shall return all company property, confidential information, and any materials related to the Employer's business.
 GOVERNING LAW:
 This Contract shall be governed by and construed in accordance with the laws of Sate of Washington. Any disputes arising out of or in connection with this Contract shall be resolved through arbitration in accordance with the rules of American Arbitration Association (AAA).

@@ -67,6 +67,7 @@ class StepAutomation:
                 Thought Process 3 End:
 
                 Final Answer Start:
+                [Review your ansewrs and Make sure the answer of the question is found. If so make sure answer the question first]
                 [Summrize from Query Result Start: to Thought Process 3 End:]
                 [Provides business insight considering the questions from Thought Process 3 Start: to Thought Process 3 End:]
                 [Review the overall Result Start: to Thought Process 3 End: and write summrized the final answer]
