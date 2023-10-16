@@ -10,8 +10,8 @@ class aoai:
     openai.api_base = os.getenv("OPENAI_API_BASE")
     openai.api_version = "2023-03-15-preview"
     openai.api_key = os.getenv("OPENAI_API_KEY")
-
-    def __init__(self, engine: str="chat-gpt" ):
+    
+    def __init__(self, engine: str=os.getenv("ENGINE") ):
         self.engine = engine
 
     def run(self, prompt, temperature: float=0.5, max_tokens: int=500, 

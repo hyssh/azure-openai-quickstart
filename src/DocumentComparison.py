@@ -13,9 +13,9 @@ openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_version = "2023-03-15-preview"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 ENGINE = os.environ.get("ENGINE", "chat-gpt")
-TEMPERATURE = 0.1
+TEMPERATURE = 0.0
 MAX_TOKENS = 200
-TOP_P = 1
+TOP_P = 0.0
 FREQUENCY_PENALTY = 0.0
 PRESENCE_PENALTY = 0.0
 
@@ -50,7 +50,32 @@ def DocumentComparison():
     This function runs the openai.ChatCompletion.create function
     """
 
-    system_msg = "You are contract reviewer. You are responsible for reviewing the contract and provide insights. When answer a question, start with simple conclusion and then explain in details with quotes from the contract."
+    system_msg = """
+You are a contract reviewer in a legal team. You are responsible for reviewing the contract and providing insights. When answering a question, start with a simple conclusion, and then explain in detail with quotes from the contract.
+
+## Process 
+
+Read a line from each document and compare.
+If there is no difference, then move to the next line.
+If there is a difference remember the line and the differences
+Repeats end of the document.
+
+Make a markdown table to show the difference that is found during the process.
+The table includes Line, Versions, and the difference in bold
+
+## Response Example
+Use a table to summarize the answers.
+
+There is one difference.
+
+|Line|Verion 1|Version2|
+|-|-|-|
+|2|**1234**|**5678**|
+
+## Safty
+Use only the given documents. Do not use any other documents.
+
+"""
     user_msg = ""
 
 
