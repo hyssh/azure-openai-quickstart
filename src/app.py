@@ -19,9 +19,9 @@ sample = st.sidebar.selectbox("Choose a scenario", ["Natural Language to SQL Que
                                                     "Generate Additional Insights", 
                                                     "LangChain SQL Agent", 
                                                     "Documents Comparison", 
-                                                    "Sentiment Analysis", 
+                                                    "Movie Recommender",
                                                     "Facility Request",
-                                                    "Movie Recommender"], index=0)
+                                                    "Sentiment Analysis"], index=0)
 
 if sample == "Natural Language to SQL Query":
     sample101()

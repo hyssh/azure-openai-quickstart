@@ -12,9 +12,9 @@ openai.api_type = "azure"
 openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_version = "2023-03-15-preview"
 openai.api_key = os.getenv("OPENAI_API_KEY")
-ENGINE = os.environ.get("ENGINE", "chat-gpt")
+ENGINE = os.environ.get("ENGINE")
 TEMPERATURE = 0.0
-MAX_TOKENS = 200
+MAX_TOKENS = 500
 TOP_P = 0.0
 FREQUENCY_PENALTY = 0.0
 PRESENCE_PENALTY = 0.0
@@ -24,7 +24,7 @@ def load_contracts():
     return open("./contract/version1.txt", "r").read(), open("./contract/version2.txt", "r").read()
 
 # define custom function to run the openai.ChatCompletion.create function
-def run(user_msg: str, system_msg: str):  
+def run(user_msg: str, system_msg: str, engine: str = ENGINE):  
     """
     This function runs the openai.ChatCompletion.create function
     """
@@ -33,7 +33,7 @@ def run(user_msg: str, system_msg: str):
                 ]
 
     res = openai.ChatCompletion.create(
-        engine=ENGINE,
+        engine=engine,
         messages = messages,
         temperature=TEMPERATURE,
         max_tokens=MAX_TOKENS,
@@ -64,17 +64,18 @@ Make a markdown table to show the difference that is found during the process.
 The table includes Line, Versions, and the difference in bold
 
 ## Response Example
-Use a table to summarize the answers.
+[Use a table to summarize the answers]
 
-There is one difference.
+There is two differences.
 
-|Line|Verion 1|Version2|
-|-|-|-|
-|2|**1234**|**5678**|
+|Item Number|Line|Verion 1|Version2|
+|-|-|-|-|
+|1|10|**1234**|**5678**|
+|2|12|**ABCD**|**EFGH**|
 
-## Safty
+
+## Safety
 Use only the given documents. Do not use any other documents.
-
 """
     user_msg = ""
 
@@ -89,7 +90,7 @@ Use only the given documents. Do not use any other documents.
             st.code("what is the risk for the employee with the new updated version", language="html")
         with system_tab:
             st.write("## System Message")
-            st.text_area(label="System", value=system_msg)
+            st.text_area(label="System", value=system_msg, height=800)
 
         
     # load documents
@@ -120,12 +121,13 @@ Use only the given documents. Do not use any other documents.
     st.markdown("---")
 
     with st.container():
+        selected_engine = st.selectbox("Select a GPT model", ["chat-gpt", "gpt4"], index=0)
         user_questions = st.text_input("Ask a question")
         if st.button("Ask"):
             st.spinner("Comparing...")
             user_msg = f"There are two dcouments. version 1 --- {v1_text_area} --- version 2 --- {v2_text_area} ---. Please compare the two documents and answer my question {user_questions}"
             with st.container():
-                st.info(run(user_msg, system_msg))
+                st.info(run(user_msg, system_msg, selected_engine))
         else:
             with st.container():
                 st.empty()

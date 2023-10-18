@@ -50,6 +50,7 @@ class StepAutomation:
                 Thought Process 1 End:
 
                 Writre T-SQL Query Start: 
+                [Make sure write a T-SQL query and retrun query only in the next line]
                 ```[T-SQL Query]```
                 Writre T-SQL Query End:
 
@@ -85,7 +86,7 @@ class StepAutomation:
         openai.api_key = os.getenv("OPENAI_API_KEY")
         self.ENGINE = os.getenv("ENGINE")
         self.DEPLOYMENT_NAME = os.getenv("DEPLOYMENT_NAME")
-        self.MODEL_NAME = os.getenv("MODEL_NAME")
+        # self.MODEL_NAME = os.getenv("MODEL_NAME")
         
         
 
