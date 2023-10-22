@@ -1,0 +1,15 @@
+Use a homomorphic encryption (HE) technique to encrypt the data in use in the database. For example, use HE to encrypt the data before performing any computations or operations on it, and decrypt the results after the computations or operations are done.
+
+Audit Logging
+
+Audit logging is the process of recording the activities or events that occur in the database, such as the authentication, authorization, access, modification, or deletion of the data, or the execution of the queries or commands. Audit logging helps to monitor and audit the data usage and behavior in the database, as well as to detect and respond to any anomalies or incidents. Audit logging can be configured at different levels of the database, such as the database, the schema, the table, the column, or the row level. The log must be kept for 24 months and make sure the logs are stored in an immutable storage to prevent alteration. 
+
+Some of the best practices for audit logging in relational databases are:
+
+Use a comprehensive and consistent audit policy to define what, when, where, how, and by whom the data activities or events should be logged. For example, use a policy to specify the types, levels, formats, and destinations of the audit logs, and the IP address, users, roles, or actions that should be logged.
+
+Use a reliable and secure audit meachanism to generate, store, and transmit the audit logs. For example, use a mechanism that ensures the accuracy, completeness, integrity, and availability of the audit logs, and protects them from unauthorized or malicious access, modification, or deletion.
+
+Use an efficient audit system to manage and analyze the audit logs. For example, use a system that can handle the volume, velocity, and variety of the audit logs, and provide the functionality, performance, and usability of the audit analysis.
+
+Use a proactive and reactive audit strategy to review and act on the audit logs. For example, use a strategy that involves regular and automated audit reviews, alerts, and reports, as well as timely and appropriate audit responses, investigations, and resolutions.
