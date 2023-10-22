@@ -68,4 +68,5 @@ class demo_utils:
     
     def deletecollection(self, db_name: str="compliance_kb"):
         self.client.delete_collection(db_name)
-        # self.getorcreatecollection()
+        print("Deleted collection: " + db_name)
+        return self.getorcreatecollection()
