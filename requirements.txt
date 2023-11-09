@@ -13,3 +13,5 @@ matplotlib
 plotly
 scikit-learn
 scipy
+azure-cognitiveservices-speech
+gradio

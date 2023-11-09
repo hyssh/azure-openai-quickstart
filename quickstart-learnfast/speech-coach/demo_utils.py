@@ -10,7 +10,7 @@ class demo_utils:
     dotenv.load_dotenv()
     openai.api_type = "azure"
     openai.api_base = os.getenv("OPENAI_API_BASE")
-    openai.api_version = "2023-03-15-preview"
+    openai.api_version = "2023-06-01-preview"
     openai.api_key = os.getenv("OPENAI_API_KEY")
     
     def __init__(self, engine: str="gpt4"):
@@ -49,3 +49,17 @@ class demo_utils:
         b = res["data"][1]["embedding"]
         # return self.cosine_similarity(res["data"][0]["embedding"], res["data"][1]["embedding"])
         return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))  
+    
+    def get_profile_image(self, prompt: str="profile photo 40 years old asian male low-income divorced looking at a camera in the center of the photo"):
+        import requests
+        from io import BytesIO
+
+        res = self.openai.Image.create(
+            prompt=prompt,
+            size="512x512",
+            n=1
+        )
+        response = requests.get(res["data"][0]["url"])
+        # return as byte array
+        return BytesIO(response.content)
+
