@@ -1,0 +1,11 @@
+Generate a random patient profile includes:
+ - name
+ - age
+ - ethnicity [African-American, Asian-American, Caucasian/White, Hispanic/Latino, Native American/Alaska Native, Pacific Islander/Hawaiian, Middle Eastern/North African, Multiracial, Other/Unknown]
+ - gender [Male, Female]
+ - income [High-income, Medium-income, Low-income]
+ - marital [Married, Divorced, Single]
+ - diagnosis result
+ - medical history [medical history must correspond to the diagnosis result]
+ - severity [Low, Medium, High, Emergency]
+ - Use well formatted JSON to store the patient profile.

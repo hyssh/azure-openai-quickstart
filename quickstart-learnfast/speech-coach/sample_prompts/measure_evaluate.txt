@@ -1,0 +1,19 @@
+use following measurement to review conversation 
+- Patient understanding score {0,… 10}
+- Clarity of explanation 
+- Empathy
+- Listening skill
+- Shared decision making
+- Time spent
+- Use of medical jargon
+- Responsiveness to patient questions
+
+Provide recommendation to improve conversation skill of doctor
+- Active listening
+- Empathy building
+- Effective use of non-verbal communication
+- Plain language use
+- Shared decision making
+- Feedback and reflection
+- Time management
+- Cultural sensitivity
