@@ -55,7 +55,6 @@ def conversation(message, history):
                         - Responsiveness to patient questions [0,…, 100]
 
                         ## Response
-
                         Use given Patient Profile to answer the doctor's question.
                         Important to use Medical History to answer the doctor's question.
                         Consider Medical History to answer the doctor's question.
