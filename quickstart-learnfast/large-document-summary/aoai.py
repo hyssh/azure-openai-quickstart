@@ -4,8 +4,9 @@ class aoai:
     import os
     import openai
     import dotenv
+    import retrying
 
-    dotenv.load_dotenv()
+    dotenv.load_dotenv(dotenv_path=r".\.env",override=True)
     openai.api_type = "azure"
     openai.api_base = os.getenv("OPENAI_API_BASE")
     openai.api_version = "2023-03-15-preview"
@@ -14,6 +15,7 @@ class aoai:
     def __init__(self, engine: str=os.getenv("OPENAI_ENGINE")):
         self.engine = engine
 
+    @retrying.retry(wait_fixed=60000,stop_max_attempt_number=5)
     def run(self, prompt, temperature: float=0.5, max_tokens: int=500, 
                  top_p: float=0.5, 
                  frequency_penalty: float=0.0, 
