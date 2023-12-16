@@ -7,7 +7,7 @@ from azure.storage.blob import BlobServiceClient
 from azure.core.exceptions import ResourceExistsError
 # from indexer import Indexer
 
-load_dotenv()
+load_dotenv(dotenv_path="./.env",override=True)
 endpoint = os.getenv('AZURE_FORM_RECOGNIZER_ENDPOINT')
 key = os.getenv('AZURE_FORM_RECOGNIZER_KEY')
 
