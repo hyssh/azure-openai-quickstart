@@ -1,0 +1,26 @@
+{
+    "name": "Natural Language to SQL Demo",
+    "dockerComposeFile": "../../devcontainer-docker-compose.yaml",
+    "service": "n2sql",
+    "workspaceFolder": "/workspace/n2sql",
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/jlaundry/devcontainer-features/mssql-odbc-driver:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.vscode-docker",
+                "ms-python.python@2024.14.0"
+            ]
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",
+    // "settings": {
+    //     "terminal.integrated.shell.linux": "/bin/bash"
+    // },
+    "forwardPorts": [
+        8501
+    ]
+    // "remoteUser": "vscode"
+}

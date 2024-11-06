@@ -11,7 +11,7 @@ from dotenv import load_dotenv
 import requests
 from collections import OrderedDict
 
-env_path = r"C:\Users\hyssh\workspace\openai-demo\quickstart-learnfast\function-calling\.env"
+env_path = "/.env"
 load_dotenv(dotenv_path=env_path, override=True)
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -107,14 +107,15 @@ def retrieve_sales_report(query)->str:
     from sqldbconn import get_connx
 
 
-    sql_query = """
-    SELECT d.[Calendar Year], d.[Calendar Month Number], sum(o.[Total Excluding Tax]) as [Total Order Amount]
-    FROM [Fact].[Order] as o JOIN [Dimension].[Date] as d ON o.[Order Date Key] = d.[Date]
-    GROUP BY d.[Calendar Year], d.[Calendar Month Number]
-    ORDER BY d.[Calendar Year], d.[Calendar Month Number]
-    """
-    df = pd.read_sql_query(sql_query, get_connx())
-    return json.dumps(df.to_dict(orient='records'))
+    # sql_query = """
+    # SELECT d.[Calendar Year], d.[Calendar Month Number], sum(o.[Total Excluding Tax]) as [Total Order Amount]
+    # FROM [Fact].[Order] as o JOIN [Dimension].[Date] as d ON o.[Order Date Key] = d.[Date]
+    # GROUP BY d.[Calendar Year], d.[Calendar Month Number]
+    # ORDER BY d.[Calendar Year], d.[Calendar Month Number]
+    # """
+    # df = pd.read_sql_query(sql_query, get_connx())
+    # return json.dumps(df.to_dict(orient='records'))
+    return """<Table><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>1</Calendar Month Number><Total Order Amount>3824842.85</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>2</Calendar Month Number><Total Order Amount>2821282.20</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>3</Calendar Month Number><Total Order Amount>3966078.10</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>4</Calendar Month Number><Total Order Amount>4155710.05</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>5</Calendar Month Number><Total Order Amount>4562830.35</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>6</Calendar Month Number><Total Order Amount>4150098.60</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>7</Calendar Month Number><Total Order Amount>4502741.85</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>8</Calendar Month Number><Total Order Amount>3601220.60</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>9</Calendar Month Number><Total Order Amount>3916003.25</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>10</Calendar Month Number><Total Order Amount>3879872.45</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>11</Calendar Month Number><Total Order Amount>3819809.10</Total Order Amount></Row><Row><Calendar Year>2013</Calendar Year><Calendar Month Number>12</Calendar Month Number><Total Order Amount>3728103.40</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>1</Calendar Month Number><Total Order Amount>4202578.80</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>2</Calendar Month Number><Total Order Amount>3572744.40</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>3</Calendar Month Number><Total Order Amount>3955257.55</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>4</Calendar Month Number><Total Order Amount>4212856.25</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>5</Calendar Month Number><Total Order Amount>4753224.10</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>6</Calendar Month Number><Total Order Amount>4427573.80</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>7</Calendar Month Number><Total Order Amount>4919791.85</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>8</Calendar Month Number><Total Order Amount>4197257.40</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>9</Calendar Month Number><Total Order Amount>3973877.85</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>10</Calendar Month Number><Total Order Amount>4606478.45</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>11</Calendar Month Number><Total Order Amount>4157270.55</Total Order Amount></Row><Row><Calendar Year>2014</Calendar Year><Calendar Month Number>12</Calendar Month Number><Total Order Amount>4513092.40</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>1</Calendar Month Number><Total Order Amount>4556065.25</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>2</Calendar Month Number><Total Order Amount>4307819.25</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>3</Calendar Month Number><Total Order Amount>4644642.35</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>4</Calendar Month Number><Total Order Amount>5222594.85</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>5</Calendar Month Number><Total Order Amount>4636628.45</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>6</Calendar Month Number><Total Order Amount>4696866.65</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>7</Calendar Month Number><Total Order Amount>5339212.00</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>8</Calendar Month Number><Total Order Amount>4070526.60</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>9</Calendar Month Number><Total Order Amount>4841896.70</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>10</Calendar Month Number><Total Order Amount>4653840.90</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>11</Calendar Month Number><Total Order Amount>4240612.30</Total Order Amount></Row><Row><Calendar Year>2015</Calendar Year><Calendar Month Number>12</Calendar Month Number><Total Order Amount>4607182.15</Total Order Amount></Row><Row><Calendar Year>2016</Calendar Year><Calendar Month Number>1</Calendar Month Number><Total Order Amount>4612140.45</Total Order Amount></Row><Row><Calendar Year>2016</Calendar Year><Calendar Month Number>2</Calendar Month Number><Total Order Amount>4099480.35</Total Order Amount></Row><Row><Calendar Year>2016</Calendar Year><Calendar Month Number>3</Calendar Month Number><Total Order Amount>4807110.70</Total Order Amount></Row><Row><Calendar Year>2016</Calendar Year><Calendar Month Number>4</Calendar Month Number><Total Order Amount>4739058.60</Total Order Amount></Row><Row><Calendar Year>2016</Calendar Year><Calendar Month Number>5</Calendar Month Number><Total Order Amount>5138002.65</Total Order Amount></Row></Table>"""
 
 def sales_forecast(dataset)->str:
     sample_sales_forecast = """
@@ -144,7 +145,7 @@ def get_current_time(location):
 functions = [  
     {
         "name": "search_bing",
-        "description": "Searches bing to get up to date information from the web",
+        "description": "1",
         "parameters": {
             "type": "object",
             "properties": {
@@ -411,9 +412,8 @@ def conversation(message, history):
 
     res, history_openai_format = run_multiturn_conversation(history_openai_format, functions, available_functions, ENGINE, verbose=False)
     return res.choices[0].message['content']
-
-
-with gr.Blocks() as app:
+ 
+with gr.Blocks(fill_height=True) as app:
     gr.ChatInterface(conversation)
 
 app.queue().launch()

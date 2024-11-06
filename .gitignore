@@ -9,3 +9,6 @@
 .pdf
 .docx
 **/contents=chunks
+**/.cache
+**/coding
+**/OAI_CONFIG_LIST

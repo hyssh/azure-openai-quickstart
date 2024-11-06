@@ -90,8 +90,8 @@ def sample102():
         # samples
         with sample_tab:
             st.header("Samples")
-            st.code("high-value customers for targeted marketing campaigns or loyalty programs", language="html")
-            st.code("average number of orders and purchase amount per customer ", language="html")
+            st.code("high-value customers for targeted marketing campaigns or a loyalty program", language="html")
+            st.code("average number of orders and purchase amount per customer", language="html")
             st.code("Get top 5 most popular products with the amount of the purchases", language="html")
             st.code("Get customer email and address who purchased our products the most with the amount of the purchases", language="html")
             st.code("Create a list combining product category and product naming it 'ProductShortDesc' name and add sales revenue", language="html")

@@ -15,4 +15,4 @@ scikit-learn
 scipy
 azure-cognitiveservices-speech
 gradio
-tiktoken==0.5.1
+# tiktoken==0.5.1
