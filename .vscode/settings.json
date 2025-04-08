@@ -1,3 +1,4 @@
 {
-    "appService.showBuildDuringDeployPrompt": false
+    "appService.showBuildDuringDeployPrompt": false,
+    "python.terminal.activateEnvironment": true
 }

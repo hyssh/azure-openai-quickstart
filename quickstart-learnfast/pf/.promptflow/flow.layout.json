@@ -1,0 +1,35 @@
+{
+  "nodeLayouts": {
+    "inputs": {
+      "x": 620,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 550,
+      "y": 444,
+      "index": -1
+    },
+    "llm_node_pjtg": {
+      "x": 800,
+      "y": 176,
+      "index": 0
+    },
+    "llm_gpt_4o": {
+      "x": 140,
+      "y": 176,
+      "index": 1
+    },
+    "llm_DeepSeek_R1": {
+      "x": 470,
+      "y": 176,
+      "index": 2
+    },
+    "python_node_u8nu": {
+      "x": 470,
+      "y": 310,
+      "index": 3
+    }
+  },
+  "orientation": "Vertical"
+}

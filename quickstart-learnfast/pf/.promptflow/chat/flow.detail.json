@@ -1,0 +1,38 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "ed85ec42-4ff1-4e4b-9de9-d3aaf88e0fda_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "question": "what time is it now?"
+      },
+      "output": {
+        "output": "I'm sorry, but I don't have the capability to provide real-time information, including the current time. You can check the time on your device or by searching online. How else can I assist you today?"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "ed85ec42-4ff1-4e4b-9de9-d3aaf88e0fda",
+      "root_run_id": "ed85ec42-4ff1-4e4b-9de9-d3aaf88e0fda",
+      "source_run_id": null,
+      "flow_id": "default_flow_id",
+      "start_time": "2025-03-26T00:19:27.017987Z",
+      "end_time": "2025-03-26T00:19:28.471908Z",
+      "index": 0,
+      "api_calls": [],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 1.453921
+      },
+      "result": {
+        "output": "I'm sorry, but I don't have the capability to provide real-time information, including the current time. You can check the time on your device or by searching online. How else can I assist you today?"
+      },
+      "upload_metrics": false,
+      "otel_trace_id": null,
+      "message_format": "basic"
+    }
+  ],
+  "node_runs": []
+}

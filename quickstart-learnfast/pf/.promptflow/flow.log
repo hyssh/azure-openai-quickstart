@@ -1,0 +1,14 @@
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     Start executing nodes in thread pool mode.
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     Start to run 4 nodes with concurrency level 16.
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     The node 'llm_node_pjtg' will be bypassed because the activate condition is not met, i.e. '${flow.model}' is not equal to 'phi-4'.
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     The node 'llm_gpt_4o' will be bypassed because the activate condition is not met, i.e. '${flow.model}' is not equal to 'gpt-4o'.
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     The node 'llm_DeepSeek_R1' will be executed because the activate condition is met, i.e. '${flow.model}' is equal to 'DeepSeek'.
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     Bypassing node llm_node_pjtg. node run id: 887972f0-2e82-427a-aef1-6bc1373e94bc_llm_node_pjtg_0
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     Bypassing node llm_gpt_4o. node run id: 887972f0-2e82-427a-aef1-6bc1373e94bc_llm_gpt_4o_0
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     The node 'llm_DeepSeek_R1' will be executed because the activate condition is met, i.e. '${flow.model}' is equal to 'DeepSeek'.
+2025-03-25 17:21:27 -0700  156448 execution.flow     INFO     Executing node llm_DeepSeek_R1. node run id: 887972f0-2e82-427a-aef1-6bc1373e94bc_llm_DeepSeek_R1_0
+2025-03-25 17:21:28 -0700  156448 execution.flow     INFO     Node llm_DeepSeek_R1 completes.
+2025-03-25 17:21:28 -0700  156448 execution.flow     WARNING  The node 'llm_gpt_4o' referenced by the input 'input1' of the current node 'python_node_u8nu' has been bypassed, and no default value is set. Will use 'None' as the value for this input.
+2025-03-25 17:21:28 -0700  156448 execution.flow     WARNING  The node 'llm_node_pjtg' referenced by the input 'input3' of the current node 'python_node_u8nu' has been bypassed, and no default value is set. Will use 'None' as the value for this input.
+2025-03-25 17:21:28 -0700  156448 execution.flow     INFO     Executing node python_node_u8nu. node run id: 887972f0-2e82-427a-aef1-6bc1373e94bc_python_node_u8nu_0
+2025-03-25 17:21:28 -0700  156448 execution.flow     INFO     Node python_node_u8nu completes.

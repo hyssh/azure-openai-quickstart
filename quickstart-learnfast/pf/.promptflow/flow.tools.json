@@ -1,0 +1,71 @@
+{
+  "package": {},
+  "code": {
+    "llm_node_e40h.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_node_e40h.jinja2"
+    },
+    "llm_node_pjtg.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_node_pjtg.jinja2"
+    },
+    "llm_gpt_4o.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_gpt_4o.jinja2"
+    },
+    "llm_DeepSeek_R1.jinja2": {
+      "type": "llm",
+      "inputs": {
+        "question": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "llm_DeepSeek_R1.jinja2"
+    },
+    "python_node_u8nu.py": {
+      "type": "python",
+      "inputs": {
+        "input1": {
+          "type": [
+            "string"
+          ]
+        },
+        "input2": {
+          "type": [
+            "string"
+          ]
+        },
+        "input3": {
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "source": "python_node_u8nu.py",
+      "function": "my_python_tool"
+    }
+  }
+}

@@ -15,4 +15,5 @@ scikit-learn
 scipy
 azure-cognitiveservices-speech
 gradio
+azure-monitor-opentelemetry
 # tiktoken==0.5.1

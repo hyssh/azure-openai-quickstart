@@ -1,0 +1,65 @@
+inputs:
+  user_msg:
+    type: string
+    default: why sky is blue
+  model:
+    type: string
+    default: DeepSeek
+outputs:
+  answer:
+    type: string
+    reference: ${python_node_u8nu.output}
+nodes:
+- name: llm_node_pjtg
+  type: llm
+  source:
+    type: code
+    path: llm_node_pjtg.jinja2
+  inputs:
+    temperature: 0.1
+    question: ${inputs.user_msg}
+    max_tokens: 50
+  connection: lm-studio-phi4
+  api: chat
+  activate:
+    when: ${inputs.model}
+    is: phi-4
+- name: llm_gpt_4o
+  type: llm
+  source:
+    type: code
+    path: llm_gpt_4o.jinja2
+  inputs:
+    max_tokens: 50
+    deployment_name: gpt-4o
+    question: ${inputs.user_msg}
+  connection: gpt-4o-on-azure
+  api: chat
+  activate:
+    when: ${inputs.model}
+    is: gpt-4o
+- name: llm_DeepSeek_R1
+  type: llm
+  source:
+    type: code
+    path: llm_DeepSeek_R1.jinja2
+  inputs:
+    temperature: 0.1
+    max_tokens: 50
+    response_format:
+      type: text
+    question: ${inputs.user_msg}
+  connection: DeepSeek_on_azure
+  api: chat
+  activate:
+    when: ${inputs.model}
+    is: DeepSeek
+- name: python_node_u8nu
+  type: python
+  source:
+    type: code
+    path: python_node_u8nu.py
+  inputs:
+    input1: ${llm_gpt_4o.output}
+    input2: ${llm_DeepSeek_R1.output}
+    input3: ${llm_node_pjtg.output}

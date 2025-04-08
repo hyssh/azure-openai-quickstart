@@ -1,0 +1,44 @@
+{
+  "nodes": {
+    "llm_node_e40h": {
+      "variant_0": {
+        "inputs": {
+          "text": [],
+          "response_format": [],
+          "question": []
+        }
+      }
+    },
+    "llm_node_pjtg": {
+      "variant_0": {
+        "inputs": {
+          "question": []
+        }
+      }
+    },
+    "llm_DeepSeek_R1": {
+      "variant_0": {
+        "inputs": {
+          "response_format": [],
+          "question": []
+        }
+      }
+    },
+    "llm_gpt_4o": {
+      "variant_0": {
+        "inputs": {
+          "question": []
+        }
+      }
+    },
+    "python_node_u8nu": {
+      "variant_0": {
+        "inputs": {
+          "input1": [],
+          "input2": [],
+          "input3": []
+        }
+      }
+    }
+  }
+}

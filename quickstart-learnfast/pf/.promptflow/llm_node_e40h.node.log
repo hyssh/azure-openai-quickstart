@@ -1,0 +1,27 @@
+2025-02-04 15:05:24 -0800    3872 execution.flow     INFO     Executing node llm_node_e40h. node run id: a6300733-7b65-40f5-9535-e20cd89090e1_llm_node_e40h_df56329b-ca86-4890-b8d6-2cc3c65588a5
+2025-02-04 15:05:24 -0800    3872 execution          ERROR    Node llm_node_e40h in line None failed. Exception: The Chat API requires a specific format for prompt definition, and the prompt should include separate lines as role delimiters: 'system:\n','user:\n','assistant:\n','function:\n'. Current parsed role 'why sky is blue' does not meet the requirement. If you intend to use the Completion API, please select the appropriate API type and deployment name. If you do intend to use the Chat API, please refer to the guideline at https://aka.ms/pfdoc/chat-prompt or view the samples in our gallery that contain 'Chat' in the name..
+Traceback (most recent call last):
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\_core\flow_execution_context.py", line 90, in invoke_tool
+    result = self._invoke_tool_inner(node, f, kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\_core\flow_execution_context.py", line 201, in _invoke_tool_inner
+    raise e
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\_core\flow_execution_context.py", line 182, in _invoke_tool_inner
+    return f(**kwargs)
+           ^^^^^^^^^^^
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\tracing\_trace.py", line 545, in wrapped
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\tools\common.py", line 356, in wrapper
+    raise e
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\tools\common.py", line 353, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\tools\openai.py", line 115, in chat
+    messages = parse_chat(chat_str)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\tools\common.py", line 168, in parse_chat
+    validate_role(role, valid_roles=valid_roles)
+  File "C:\Users\hyssh\AppData\Local\anaconda3\envs\pf\Lib\site-packages\promptflow\tools\common.py", line 61, in validate_role
+    raise ChatAPIInvalidRole(message=error_message)
+promptflow.tools.exception.ChatAPIInvalidRole: The Chat API requires a specific format for prompt definition, and the prompt should include separate lines as role delimiters: 'system:\n','user:\n','assistant:\n','function:\n'. Current parsed role 'why sky is blue' does not meet the requirement. If you intend to use the Completion API, please select the appropriate API type and deployment name. If you do intend to use the Chat API, please refer to the guideline at https://aka.ms/pfdoc/chat-prompt or view the samples in our gallery that contain 'Chat' in the name.
