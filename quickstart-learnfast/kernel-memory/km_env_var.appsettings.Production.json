@@ -1,0 +1,1002 @@
+[
+    {
+        "name": "ASPNETCORE_ENVIRONMENT",
+        "value": "Production",
+        "slotSetting": false
+    },
+    {
+        "name": "DOCKER_ENABLE_CI",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
+        "value": "false",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__RunWebService",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__RunHandlers",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__OpenApiEnabled",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__SendSSEDoneMessage",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__extract__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__extract__Class",
+        "value": "Microsoft.KernelMemory.Handlers.TextExtractionHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__partition__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__partition__Class",
+        "value": "Microsoft.KernelMemory.Handlers.TextPartitioningHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__gen_embeddings__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__gen_embeddings__Class",
+        "value": "Microsoft.KernelMemory.Handlers.GenerateEmbeddingsHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__save_records__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__save_records__Class",
+        "value": "Microsoft.KernelMemory.Handlers.SaveRecordsHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__summarize__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__summarize__Class",
+        "value": "Microsoft.KernelMemory.Handlers.SummarizationHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__delete_generated_files__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__delete_generated_files__Class",
+        "value": "Microsoft.KernelMemory.Handlers.DeleteGeneratedFilesHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__private_delete_document__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__private_delete_document__Class",
+        "value": "Microsoft.KernelMemory.Handlers.DeleteDocumentHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__private_delete_index__Assembly",
+        "value": "Microsoft.KernelMemory.Core.dll",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__private_delete_index__Class",
+        "value": "Microsoft.KernelMemory.Handlers.DeleteIndexHandler",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__disabled_handler_example__Assembly",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__Handlers__disabled_handler_example__Class",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Service__MaxUploadSizeMb",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__ContentStorageType",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DocumentStorageType",
+        "value": "AzureBlobs",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__TextGeneratorType",
+        "value": "AzureOpenAIText",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__ContentModerationType",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DefaultIndexName",
+        "value": "default",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__ServiceAuthorization__Enabled",
+        "value": "false",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__ServiceAuthorization__AuthenticationType",
+        "value": "APIKey",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__ServiceAuthorization__HttpHeaderName",
+        "value": "Authorization",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__ServiceAuthorization__AccessKey1",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__ServiceAuthorization__AccessKey2",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__OrchestrationType",
+        "value": "Distributed",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__DistributedOrchestration__QueueType",
+        "value": "AzureQueues",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__EmbeddingGenerationEnabled",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__EmbeddingGeneratorTypes__0",
+        "value": "AzureOpenAIEmbedding",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__MemoryDbTypes__0",
+        "value": "AzureAISearch",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__MemoryDbUpsertBatchSize",
+        "value": "1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__ImageOcrType",
+        "value": "None",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__TextPartitioning__MaxTokensPerParagraph",
+        "value": "1000",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__DataIngestion__TextPartitioning__OverlappingTokens",
+        "value": "100",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__MemoryDbType",
+        "value": "AzureAISearch",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__EmbeddingGeneratorType",
+        "value": "AzureOpenAIEmbedding",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__MaxAskPromptSize",
+        "value": "-1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__MaxMatchesCount",
+        "value": "100",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__AnswerTokens",
+        "value": "300",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__EmptyAnswer",
+        "value": "INFO NOT FOUND",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__FactTemplate",
+        "value": "==== [File:{{$source}};Relevance:{{$relevance}}]:\n{{$content}}",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__IncludeDuplicateFacts",
+        "value": "false",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__Temperature",
+        "value": "0.0",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__TopP",
+        "value": "0.0",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__PresencePenalty",
+        "value": "0.0",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__FrequencyPenalty",
+        "value": "0.0",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__UseContentModeration",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Retrieval__SearchClient__ModeratedAnswer",
+        "value": "Sorry, the generated content contains unsafe or inappropriate information.",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__Endpoint",
+        "value": "https://api.anthropic.com",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__EndpointVersion",
+        "value": "2023-06-01",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__ApiKey",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__TextModelName",
+        "value": "claude-3-haiku-20240307",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__Tokenizer",
+        "value": "cl100k",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__MaxTokenIn",
+        "value": "200000",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__MaxTokenOut",
+        "value": "4096",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__DefaultSystemPrompt",
+        "value": "You are an assistant that will answer user query based on a context",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Anthropic__HttpClientName",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AWSS3__Auth",
+        "value": "AccessKey",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AWSS3__AccessKey",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AWSS3__SecretAccessKey",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AWSS3__BucketName",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIContentSafety__Auth",
+        "value": "AzureIdentity",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIContentSafety__Endpoint",
+        "value": "https://<...>",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIContentSafety__APIKey",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIContentSafety__GlobalSafetyThreshold",
+        "value": "0.0",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIDocIntel__Auth",
+        "value": "AzureIdentity",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIDocIntel__AzureIdentityAudience",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIDocIntel__APIKey",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAIDocIntel__Endpoint",
+        "value": "en.net",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAISearch__Auth",
+        "value": "ApiKey",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAISearch__AzureIdentityAudience",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAISearch__APIKey",
+        "value": "KEYGOESHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAISearch__Endpoint",
+        "value": "ENDPOINTHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAISearch__UseHybridSearch",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureAISearch__UseStickySessions",
+        "value": "true",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureBlobs__Auth",
+        "value": "ConnectionString",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureBlobs__AzureIdentityAudience",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureBlobs__Account",
+        "value": "STORAGEACCOUNTNAME",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureBlobs__Container",
+        "value": "containername",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureBlobs__ConnectionString",
+        "value": "CONNECTIONSTRINGHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureBlobs__EndpointSuffix",
+        "value": "core.windows.net",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__Auth",
+        "value": "ApiKey",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__AzureIdentityAudience",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__Endpoint",
+        "value": "ENDPOINTHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__APIKey",
+        "value": "KEYHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__Deployment",
+        "value": "NAMEHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__MaxTokenTotal",
+        "value": "8191",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__Tokenizer",
+        "value": "cl100k",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__EmbeddingDimensions",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__MaxEmbeddingBatchSize",
+        "value": "1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__MaxRetries",
+        "value": "10",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIEmbedding__APIType",
+        "value": "EmbeddingGeneration",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__Auth",
+        "value": "ApiKey",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__AzureIdentityAudience",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__Endpoint",
+        "value": "ENDPOINTHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__APIKey",
+        "value": "KEYHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__Deployment",
+        "value": "gpt-4o",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__MaxTokenTotal",
+        "value": "16384",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__Tokenizer",
+        "value": "o200k",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__APIType",
+        "value": "ChatCompletion",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureOpenAIText__MaxRetries",
+        "value": "10",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__Auth",
+        "value": "ConnectionString",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__AzureIdentityAudience",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__Account",
+        "value": "STORAGEACCOUNTNAME",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__ConnectionString",
+        "value": "CONNECTIONSTRINGHERE",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__EndpointSuffix",
+        "value": "core.windows.net",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__PollDelayMsecs",
+        "value": "100",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__FetchBatchSize",
+        "value": "3",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__FetchLockSeconds",
+        "value": "300",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__MaxRetriesBeforePoisonQueue",
+        "value": "20",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__AzureQueues__PoisonQueueSuffix",
+        "value": "-poison",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Elasticsearch__CertificateFingerPrint",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Elasticsearch__Endpoint",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Elasticsearch__UserName",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Elasticsearch__Password",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Elasticsearch__IndexPrefix",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Elasticsearch__ShardCount",
+        "value": "1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Elasticsearch__Replicas",
+        "value": "0",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__LlamaSharp__TextModel__ModelPath",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__LlamaSharp__TextModel__MaxTokenTotal",
+        "value": "4096",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__LlamaSharp__EmbeddingModel__ModelPath",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__LlamaSharp__EmbeddingModel__MaxTokenTotal",
+        "value": "4096",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__MongoDbAtlas__ConnectionString",
+        "value": "mongodb://root:root@localhost:27777/?authSource=admin",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__MongoDbAtlas__DatabaseName",
+        "value": "KernelMemory",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__MongoDbAtlas__UseSingleCollectionForVectorSearch",
+        "value": "false",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__Endpoint",
+        "value": "http://localhost:11434",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__TextModel__ModelName",
+        "value": "phi3:medium-128k",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__TextModel__Tokenizer",
+        "value": "cl100k",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__TextModel__MaxTokenTotal",
+        "value": "131072",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__TextModel__MaxBatchSize",
+        "value": "1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__EmbeddingModel__ModelName",
+        "value": "nomic-embed-text",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__EmbeddingModel__Tokenizer",
+        "value": "cl100k",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__EmbeddingModel__MaxTokenTotal",
+        "value": "2048",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Ollama__EmbeddingModel__MaxBatchSize",
+        "value": "1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__TextModel",
+        "value": "gpt-4o-mini",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__TextModelMaxTokenTotal",
+        "value": "16384",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__TextModelTokenizer",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__TextGenerationType",
+        "value": "Auto",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__EmbeddingModel",
+        "value": "text-embedding-ada-002",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__EmbeddingModelMaxTokenTotal",
+        "value": "8191",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__EmbeddingModelTokenizer",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__APIKey",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__OrgId",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__Endpoint",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__MaxRetries",
+        "value": "10",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__EmbeddingDimensions",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__OpenAI__MaxEmbeddingBatchSize",
+        "value": "100",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Postgres__ConnectionString",
+        "value": "Host=localhost;Port=5432;Username=public;Password=;Database=public",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Postgres__TableNamePrefix",
+        "value": "km-",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Qdrant__Endpoint",
+        "value": "http://127.0.0.1:6333",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Qdrant__APIKey",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__Host",
+        "value": "127.0.0.1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__Port",
+        "value": "5672",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__Username",
+        "value": "user",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__Password",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__VirtualHost",
+        "value": "/",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__MessageTTLSecs",
+        "value": "3600",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__SslEnabled",
+        "value": "false",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__ConcurrentThreads",
+        "value": "4",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__PrefetchCount",
+        "value": "8",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__MaxRetriesBeforePoisonQueue",
+        "value": "20",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__DelayBeforeRetryingMsecs",
+        "value": "500",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__RabbitMQ__PoisonQueueSuffix",
+        "value": "-poison",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Redis__ConnectionString",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Redis__Tags__type",
+        "value": ",",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Redis__Tags__user",
+        "value": ",",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__Redis__Tags__ext",
+        "value": ",",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleFileStorage__StorageType",
+        "value": "Volatile",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleFileStorage__Directory",
+        "value": "_files",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__StorageType",
+        "value": "Volatile",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__Directory",
+        "value": "_queues",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__PollDelayMsecs",
+        "value": "100",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__DispatchFrequencyMsecs",
+        "value": "100",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__FetchBatchSize",
+        "value": "3",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__FetchLockSeconds",
+        "value": "300",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__MaxRetriesBeforePoisonQueue",
+        "value": "1",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleQueues__PoisonQueueSuffix",
+        "value": ".poison",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleVectorDb__StorageType",
+        "value": "Volatile",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SimpleVectorDb__Directory",
+        "value": "_vectors",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__ConnectionString",
+        "value": "",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__Schema",
+        "value": "dbo",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__MemoryCollectionTableName",
+        "value": "KMCollections",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__MemoryTableName",
+        "value": "KMMemories",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__EmbeddingsTableName",
+        "value": "KMEmbeddings",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__TagsTableName",
+        "value": "KMMemoriesTags",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__UseNativeVectorSearch",
+        "value": "false",
+        "slotSetting": false
+    },
+    {
+        "name": "KernelMemory__Services__SqlServer__VectorSize",
+        "value": "1536",
+        "slotSetting": false
+    },
+    {
+        "name": "Logging__LogLevel__Default",
+        "value": "Trace",
+        "slotSetting": false
+    },
+    {
+        "name": "AllowedHosts",
+        "value": "*",
+        "slotSetting": false
+    }
+]

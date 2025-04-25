@@ -1,19 +1,19 @@
-streamlit
-streamlit-chat
-langchain
+# streamlit
+# streamlit-chat
+# langchain
 azure-ai-formrecognizer
 openai
-wikipedia
-chromadb
+# wikipedia
+# chromadb
 # tiktoken
-python-dotenv
-pyodbc
-pandas
-matplotlib
-plotly
-scikit-learn
-scipy
-azure-cognitiveservices-speech
-gradio
+# python-dotenv
+# pyodbc
+# pandas
+# matplotlib
+# plotly
+# scikit-learn
+# scipy
+# azure-cognitiveservices-speech
+# gradio
 azure-monitor-opentelemetry
 # tiktoken==0.5.1
