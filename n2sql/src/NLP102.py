@@ -3,7 +3,7 @@ import openai
 import dotenv
 import pandas as pd
 import streamlit as st
-from sqldbconn import get_connx
+from sqldbconn import get_connx, get_connection_string
 from StepAutomation import StepAutomation
 
 # .env file must have OPENAI_API_KEY and OPENAI_API_BASE
@@ -33,6 +33,10 @@ def sample102():
             query = stepautomation.run(user_msg={"role":"user","content":"Writre T-SQL Query Start:\n"},
                                         temperature=0.7,
                                         max_tokens=400).split("```")[1]
+            # Strip markdown language identifier (e.g. 'sql') from the extracted query
+            query = query.strip()
+            if query.lower().startswith("sql"):
+                query = query[3:].strip()
             with st.expander("See T-SQL Query"):
                 st.info(query)
         except IndexError:
@@ -40,7 +44,9 @@ def sample102():
             return "I am sorry, I don't understand your command. Can you please rephrase your command?"
 
         # Step 3. send the query and get the result    
-        df = pd.read_sql_query(query, get_connx())
+        from sqlalchemy import create_engine
+        engine = create_engine(get_connection_string())
+        df = pd.read_sql_query(query, engine)
         with st.expander("See Result"):
             st.dataframe(df.head(10))
 

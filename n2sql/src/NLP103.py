@@ -16,7 +16,7 @@ from langchain.schema import OutputParserException
 from langchain.agents import create_sql_agent
 from langchain.agents.agent_toolkits import SQLDatabaseToolkit
 from langchain.agents.agent_types import AgentType
-from langchain.llms import AzureOpenAI
+from langchain.chat_models import AzureChatOpenAI
 from langchain.sql_database import SQLDatabase
 from dotenv import load_dotenv
 from langchain.agents.conversational.output_parser import ConvoOutputParser
@@ -27,7 +27,7 @@ openai.api_type = "azure"
 openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_version = "2023-03-15-preview"
 openai.api_key = os.getenv("OPENAI_API_KEY")
-DEPLOYMENT_NAME = os.getenv("DEPLOYMENT_NAME")
+DEPLOYMENT_NAME = os.getenv("DEPLOYMENT_NAME") or os.getenv("ENGINE") or os.getenv("MODEL_NAME")
 MODEL_NAME = os.getenv("MODEL_NAME")
 ENVIRONMENT = os.getenv("ENVIRONMENT")
 
@@ -67,7 +67,12 @@ class StdOutCallbackHandler(BaseCallbackHandler):
 
 def sample103():
     db = SQLDatabase.from_uri(get_connection_string())
-    llm = AzureOpenAI(deployment_name=DEPLOYMENT_NAME, model_name=MODEL_NAME, temperature=0.0, max_tokens=1024, top_p=0.0)
+    llm = AzureChatOpenAI(
+        deployment_name=DEPLOYMENT_NAME,
+        model_name=MODEL_NAME,
+        temperature=0.0,
+        max_tokens=1024,
+    )
     toolkit = SQLDatabaseToolkit(db=db, llm=llm)
 
     prefix_string = """
@@ -92,7 +97,7 @@ def sample103():
         - You can use short lists to present multiple items or options concisely.
         - You can use code blocks to display formatted content such as poems, code snippets, lyrics, etc.
     - You do not include images in markdown responses as the chat box does not support images.
-    - Your output should follow GitHub-flavored Markdown. Dollar signs are reserved for LaTeX mathematics, so `$` must be escaped. For example, \$199.99.    
+    - Your output should follow GitHub-flavored Markdown. Dollar signs are reserved for LaTeX mathematics, so `$` must be escaped. For example, \\$199.99.    
     - Alway return the final answer in the end of your output. For example, "The answer is 42" or "The answer is 42. The average is 21. The total is 84."
     """
 

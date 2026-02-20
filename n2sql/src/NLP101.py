@@ -3,7 +3,7 @@ import openai
 import dotenv
 import pandas as pd
 import streamlit as st
-from sqldbconn import get_connx
+from sqldbconn import get_connx, get_connection_string
 
 # .env file must have OPENAI_API_KEY and OPENAI_API_BASE
 dotenv.load_dotenv()
@@ -108,9 +108,15 @@ def sample101():
             # extract sql query part from the response open ai
             try:
                 sql_query = response.choices[0].message['content'].split("```")[1]
+                # Strip markdown language identifier (e.g. 'sql') from the extracted query
+                sql_query = sql_query.strip()
+                if sql_query.lower().startswith("sql"):
+                    sql_query = sql_query[3:].strip()
                 with st.expander("See executed Query"):
                     st.write(sql_query)
-                df = pd.read_sql_query(sql_query, get_connx())
+                from sqlalchemy import create_engine
+                engine = create_engine(get_connection_string())
+                df = pd.read_sql_query(sql_query, engine)
                 st.dataframe(df)
             except:
                 st.write(response.choices[0].message['content'])
