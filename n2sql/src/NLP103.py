@@ -39,31 +39,21 @@ class StdOutCallbackHandler(BaseCallbackHandler):
         pass
 
     def on_agent_action(self, action: AgentAction, **kwargs: Any) -> Any:
-        # asyncio.run(st.info(f"\u2611 {action} ..."))
         if "Action Input" in action.log:
-            action = action.log.split("Action:")[1]
-            asyncio.run(st.info(f"Agent action: {action} ..."))
+            action_text = action.log.split("Action:")[1]
+            st.info(f"Agent action: {action_text} ...")
         else:
             pass
 
 
-# ## Ref: https://github.com/langchain-ai/langchain/discussions/7403
-# class CustomConvoOutputParser(ConvoOutputParser):
-#     def parse(self, text: str) -> Union[AgentAction, AgentFinish]:
-#         if f"{self.ai_prefix}:" in text:
-#             return AgentFinish({"output": text.split(f"{self.ai_prefix}:")[-1].strip()}, text)
-#         regex = r"Action: (.*?)[\n]*Action Input: (.*)"
-#         match = re.search(regex, text)
-#         if not match:
-#             if f"{self.ai_prefix}:" in text:
-#                 return AgentFinish(
-#                     {"output": text.split(f"{self.ai_prefix}:")[-1].strip()}, text
-#                 )
-#             else:
-#                 raise OutputParserException(f"Could not parse LLM output: `{text}`")
-#         action = match.group(1)
-#         action_input = match.group(2)
-#         return AgentAction(action.strip(), action_input.strip(" ").strip('"'), text)
+def _handle_parsing_error(error: OutputParserException) -> str:
+    """Extract the answer from an unparseable LLM output instead of looping."""
+    error_msg = str(error)
+    # Try to extract text after "Could not parse LLM output:"
+    if "Could not parse LLM output:" in error_msg:
+        raw = error_msg.split("Could not parse LLM output:")[1].strip().strip("`")
+        return raw
+    return error_msg
 
 def sample103():
     db = SQLDatabase.from_uri(get_connection_string())
@@ -99,6 +89,15 @@ def sample103():
     - You do not include images in markdown responses as the chat box does not support images.
     - Your output should follow GitHub-flavored Markdown. Dollar signs are reserved for LaTeX mathematics, so `$` must be escaped. For example, \\$199.99.    
     - Alway return the final answer in the end of your output. For example, "The answer is 42" or "The answer is 42. The average is 21. The total is 84."
+
+    ## CRITICAL: Response Format
+    - When you have the final answer, you MUST use exactly this format:
+      Final Answer: <your answer here>
+    - Do NOT just write a Thought with the answer. You MUST prefix it with "Final Answer:".
+
+    ## Important: SQL Query Formatting
+    - When providing SQL in Action Input, write the raw SQL query only. Do NOT wrap it in markdown code fences (```sql ... ```).
+    - Use TOP instead of LIMIT for SQL Server syntax.
     """
 
 
@@ -109,11 +108,11 @@ def sample103():
         agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
         return_intermediate_steps=True,
         callback_manager=CallbackManager(handlers=[StdOutCallbackHandler()]),
-        # output_parser=CustomConvoOutputParser(),
-        # max_iterations=10,
         prefix=prefix_string,
-        # max_execution_time=30
+        max_iterations=15,
+        max_execution_time=60,
     )
+    agent_executor.handle_parsing_errors = _handle_parsing_error
 
     with st.sidebar:
         with st.container():
@@ -147,8 +146,15 @@ def sample103():
                 st.write(agent_executor.run(user_input))
             except OutputParserException as e:
                 error_msg = f"{e}"
-                error_msg_final_Answer = error_msg.split("Final Answer:")[1].strip().split("Question:")[0].strip()
-                st.write(f"{error_msg_final_Answer}")
+                if "Final Answer:" in error_msg:
+                    error_msg_final_Answer = error_msg.split("Final Answer:")[1].strip().split("Question:")[0].strip()
+                    st.write(f"{error_msg_final_Answer}")
+                elif "Could not parse LLM output:" in error_msg:
+                    # Extract the raw LLM output as the answer
+                    raw_output = error_msg.split("Could not parse LLM output:")[1].strip().strip("`")
+                    st.write(raw_output)
+                else:
+                    st.write(error_msg)
 
 if __name__ == "__main__":
         sample103()
